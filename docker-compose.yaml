@@ -1,0 +1,23 @@
+version: "3"
+services:
+  ## Stack Name
+  Py-Dev-Env:
+  ## Pre-defined name (optional)
+    container_name: Py-Dev-Container
+  ## Build local Dockerfile
+    build: .
+  ## Image Name
+    image: py-dev/beta:v1
+  ## Set persistent volumes (code)
+  ## (local:container_path)
+    volumes:
+      - ./app/:/app
+  ## Set env vars in .env file if needed
+#    env_file:
+#      - secret.env
+  ## Open port(s) if needed
+  ## (external:internal) 8000->5000
+#   ports:
+#      - "8000:5000"
+  ## Keep running
+#    restart: unless-stopped
